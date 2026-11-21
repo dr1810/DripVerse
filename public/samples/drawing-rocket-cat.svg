@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#fffdf6"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="5">
+    <path d="M60 470 Q160 430 256 460 T460 450" stroke="#4caf50"/>
+    <circle cx="420" cy="80" r="36" stroke="#f5b400"/>
+    <path d="M420 30 V18 M470 80 H482 M455 45 L465 35 M385 45 L375 35" stroke="#f5b400"/>
+    <path d="M236 120 Q256 60 276 120 L292 300 L220 300 Z" stroke="#e53935"/>
+    <path d="M220 300 L196 340 L226 320 M292 300 L316 340 L286 320" stroke="#e53935"/>
+    <path d="M232 330 Q246 380 256 360 Q266 390 280 330" stroke="#ff9800"/>
+    <circle cx="256" cy="170" r="22" stroke="#1e88e5"/>
+    <path d="M244 162 L238 146 L250 156 M268 162 L274 146 L262 156" stroke="#555"/>
+    <circle cx="249" cy="170" r="2" stroke="#555"/><circle cx="263" cy="170" r="2" stroke="#555"/>
+    <path d="M252 178 Q256 182 260 178 M236 176 H226 M276 176 H286" stroke="#555"/>
+    <path d="M80 140 l6 12 l12 2 l-9 9 l2 12 l-11 -6 l-11 6 l2 -12 l-9 -9 l12 -2 z" stroke="#7e57c2"/>
+    <path d="M120 300 l4 8 l8 1 l-6 6 l1 8 l-7 -4 l-7 4 l1 -8 l-6 -6 l8 -1 z" stroke="#7e57c2"/>
+    <circle cx="380" cy="260" r="40" stroke="#90a4ae"/><circle cx="368" cy="250" r="8" stroke="#90a4ae"/><circle cx="392" cy="276" r="5" stroke="#90a4ae"/>
+  </g>
+</svg>
