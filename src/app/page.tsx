@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Reveal from "@/components/Reveal";
 import ModelsExplainer from "@/components/ModelsExplainer";
+import Profiles from "@/components/Profiles";
 import Studio from "@/components/Studio";
 import { SHOWCASE, type ShowcasePair } from "@/lib/showcase";
 
@@ -33,6 +34,7 @@ export default function Home() {
             <a href="#imagination">Imagination</a>
             <a href="#how">How it works</a>
             <a href="#studio">Create</a>
+            <a href="#profiles">Profiles</a>
           </nav>
         </div>
       </header>
@@ -91,10 +93,11 @@ export default function Home() {
         </section>
 
         <Studio />
+        <Profiles />
       </main>
 
       <footer className="footer">
-        <p>Images are made on request and never stored. Sample tees and drawings are fictional.</p>
+        <p>Generated images are made on request and never stored by DripVerse. Sample tees and drawings are fictional.</p>
       </footer>
     </>
   );

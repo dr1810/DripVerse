@@ -5,7 +5,7 @@ Imagine it. Wear it. Find it.
 DripVerse shows real clothes in imagined worlds, then takes you to the store that sells them. Kids get their own mode: draw an outfit, pick a world, meet the character who wears it.
 
 - **Fashion Mode.** Show us a tee (photo, drawing or words) and pick a scene. Gemini reads the garment, Shopify finds real matching products, Nano Banana puts you or a model in the scene wearing the one you pick, and a second Gemini model checks that the garment survived.
-- **Imagination Mode.** For kids. Drawings and made-up ideas only, never photos. A friendly helper describes the drawing and suggests ideas, and the result is a stylized character. There's no shopping here; buying is for grown-ups, in Fashion Mode.
+- **Imagination Mode.** For kids. Drawings and made-up ideas only, never photos. A friendly helper describes the drawing and suggests ideas, and the result is a stylized character. After generation, the optional tee ideas row uses the preset world theme to find visual inspiration. Buying is for grown-ups in Fashion Mode.
 
 ## How it works
 
@@ -63,7 +63,7 @@ npm run eval:testset && npm run eval
 - Images must be PNG, JPEG or WebP, 5 MB or smaller, and are checked by their actual bytes. Uploads and results are held in memory only and never logged; logs record error categories only.
 - Product images are fetched only from `cdn.shopify.com`. Products, prices and links come only from Shopify responses; there are no fake fallbacks.
 - No claims about fit or sizing; the app tells you to check the store page.
-- Imagination Mode refuses photos and personal details, uses stylized characters, and has no shopping.
+- Imagination Mode refuses photos and personal details, and uses stylized characters. Tee ideas send only preset queries to the catalog.
 - Provider safety filters stay on. Blocked content, quota, timeouts, unavailable models and replies without an image all show clear errors.
 
 ## Checks

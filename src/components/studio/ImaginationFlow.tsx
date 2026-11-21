@@ -9,6 +9,7 @@ import { MAX_PROMPT_CHARS, MAX_SCENE_CHARS } from "@/lib/validation";
 import { prepareImage } from "@/lib/prepareImage";
 import { NON_RETRYABLE, postForm, type ApiError } from "./api";
 import EvaluationCard from "./EvaluationCard";
+import ImaginationTees from "./ImaginationTees";
 import SketchPad, { type SketchPadHandle } from "./SketchPad";
 
 const SAMPLE_DRAWING = { thumb: "/samples/drawing-rocket-cat.svg", png: "/samples/drawing-rocket-cat.png" };
@@ -26,6 +27,7 @@ export default function ImaginationFlow() {
   const [helper, setHelper] = useState<Interpretation | null>(null);
   const [helperError, setHelperError] = useState<string | null>(null);
   const [image, setImage] = useState<string | null>(null);
+  const [teeTheme, setTeeTheme] = useState("");
   const [evaluation, setEvaluation] = useState<Evaluation | null>(null);
   const [error, setError] = useState<ApiError | null>(null);
   const [inputError, setInputError] = useState<string | null>(null);
@@ -94,6 +96,7 @@ export default function ImaginationFlow() {
       return;
     }
     setImage(g.data.image);
+    setTeeTheme(customWorld.trim() ? "" : worldId);
 
     // 3. Ideas-kept check (Model B), only when there is a drawing to compare against.
     if (img) {
@@ -252,7 +255,7 @@ export default function ImaginationFlow() {
             </div>
           )}
         </div>
-        {image && !busy && (
+        {image && phase === "done" && (
           <div className="resultMeta">
             <p className="muted">Created with {MODEL_ROLES.image.name}</p>
             {evaluation && <EvaluationCard ev={evaluation} kid />}
@@ -264,6 +267,7 @@ export default function ImaginationFlow() {
                 Save
               </a>
             </div>
+            <ImaginationTees theme={teeTheme} />
           </div>
         )}
       </div>

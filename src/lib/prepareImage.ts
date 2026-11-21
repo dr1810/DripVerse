@@ -6,10 +6,10 @@ const ACCEPTED = ["image/png", "image/jpeg", "image/webp"];
 
 /**
  * Loads a user file or bundled sample into a canvas and re-encodes it at most
- * 1024px on the long edge. Re-encoding strips metadata (e.g. EXIF location)
+ * 1024px by default on the long edge. Re-encoding strips metadata (e.g. EXIF location)
  * and keeps the upload far below the server's 5 MB limit.
  */
-export async function prepareImage(source: File | string, opts: { photo: boolean }): Promise<Blob> {
+export async function prepareImage(source: File | string, opts: { photo: boolean; maxEdge?: number }): Promise<Blob> {
   if (source instanceof File) {
     if (!ACCEPTED.includes(source.type)) throw new Error("Please choose a PNG, JPEG or WebP image.");
     if (source.size > MAX_RAW_BYTES) throw new Error("That image is over 15 MB. Please pick a smaller one.");
@@ -24,10 +24,10 @@ export async function prepareImage(source: File | string, opts: { photo: boolean
     });
     const w = img.naturalWidth || 512;
     const h = img.naturalHeight || 512;
-    const scale = Math.min(1, MAX_EDGE / Math.max(w, h));
+    const scale = Math.min(1, (opts.maxEdge ?? MAX_EDGE) / Math.max(w, h));
     const canvas = document.createElement("canvas");
-    canvas.width = Math.round(w * scale);
-    canvas.height = Math.round(h * scale);
+    canvas.width = Math.max(1, Math.round(w * scale));
+    canvas.height = Math.max(1, Math.round(h * scale));
     const ctx = canvas.getContext("2d");
     if (!ctx) throw new Error("Canvas not supported.");
     ctx.fillStyle = "#ffffff";
