@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "eval:testset": "node eval/build-testset.mjs http://localhost:3000",
+    "eval": "node eval/run-eval.mjs http://localhost:3000 --gen 3"
   },
   "dependencies": {
     "@google/genai": "^3.6.1",

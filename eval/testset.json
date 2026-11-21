@@ -1,0 +1,113 @@
+{
+  "builtAt": "2026-11-21T20:25:48.267Z",
+  "items": [
+    {
+      "query": "red hoodie",
+      "category": "hoodie",
+      "id": "gid://shopify/p/6zMQzq8o7Nqox0ViZpsroP",
+      "title": "Minimalist Hoodie – Mega",
+      "merchant": "Comfrt",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0569/4029/8284/files/2_-_2026-08-07T143839.258.jpg",
+      "merchantColor": "Crimson"
+    },
+    {
+      "query": "black denim jacket",
+      "category": "jacket",
+      "id": "gid://shopify/p/2xdySssTiM7YfMXpwyM5WY",
+      "title": "Cobain Denim Jacket - Black",
+      "merchant": "Fashion Nova",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0293/9277/files/MPDJ1_Black_JR_V1.jpg",
+      "merchantColor": "Black"
+    },
+    {
+      "query": "yellow raincoat",
+      "category": "jacket",
+      "id": "gid://shopify/p/4WbtnEeOsnp5VX8sdofCe0",
+      "title": "Old Salt Raincoat in Yellow - Men's",
+      "merchant": "Kiel James Patrick",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/1063/1742/files/yellowraincoat.png",
+      "merchantColor": "Yellow"
+    },
+    {
+      "query": "green crewneck sweatshirt",
+      "category": "sweatshirt",
+      "id": "gid://shopify/p/3w5dYHROjz64L5XRNQIwww",
+      "title": "Crewneck Sweatshirt — Forest Green",
+      "merchant": "Butch McGuire's",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0710/8175/4901/products/CollegeSweaterFront.png",
+      "merchantColor": "Green/Moss"
+    },
+    {
+      "query": "white sneakers",
+      "category": "shoes",
+      "id": "gid://shopify/p/1l33OwALy8peVabhU9Cv7l",
+      "title": "Air Force 1 '07 - Womens",
+      "merchant": "ShopWSS",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0069/3442/9751/files/DD8959100_1.jpg",
+      "merchantColor": "White/White"
+    },
+    {
+      "query": "navy polo shirt",
+      "category": "shirt",
+      "id": "gid://shopify/p/380DsTyKzGb702NuwLui1U",
+      "title": "Semi-Spread Collar Polo Navy Original",
+      "merchant": "Collars & Co.",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0551/5572/0352/products/Navysemispreadpolomain.jpg",
+      "merchantColor": "Navy"
+    },
+    {
+      "query": "pink floral dress",
+      "category": "dress",
+      "id": "gid://shopify/p/6BZqsY9gCRUnVL1vzEbosx",
+      "title": "Felicity Mini Dress - Pink Floral",
+      "merchant": "Billy J",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0508/8198/6733/files/L4A6978.jpg",
+      "merchantColor": "Pink Floral"
+    },
+    {
+      "query": "grey sweatpants",
+      "category": "pants",
+      "id": "gid://shopify/p/1AaW8acihHr2lVw9WpadKp",
+      "title": "LINDEN Scimitar Sweatpants - Grey",
+      "merchant": "WOOLENMAKER",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0911/6191/9799/files/f1681c225f99bb66027a9a8d1160fad0.jpg",
+      "merchantColor": "Grey"
+    },
+    {
+      "query": "blue striped shirt",
+      "category": "shirt",
+      "id": "gid://shopify/p/1mV7cmK6jrhZtD8p5xWtYy",
+      "title": "Mitch Stripe Shirt Blue",
+      "merchant": "BRONZE SNAKE",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0317/5009/4893/files/BronzeSnake1-10_4924.jpg",
+      "merchantColor": "Blue"
+    },
+    {
+      "query": "purple graphic t-shirt",
+      "category": "t-shirt",
+      "id": "gid://shopify/p/406NkjKv6o8SLfp83wbvMs",
+      "title": "PURPLE Collection DopeSkill T-Shirt Real Lover Graphic",
+      "merchant": "DOPESKILL",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0442/3689/8463/files/1_7065face-c2fe-48b9-bb25-0052f683f572.jpg",
+      "merchantColor": "Black"
+    },
+    {
+      "query": "brown leather jacket",
+      "category": "jacket",
+      "id": "gid://shopify/p/3csiw4ibgcVDdxCSr0pxke",
+      "title": "Men's Brown Leather Bomber Jacket",
+      "merchant": "Martin Jackets",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0726/8299/5748/files/MenDarkBrownLeatherJacket-DarkBrownJacket1.jpg",
+      "merchantColor": "Dark Brown"
+    },
+    {
+      "query": "orange beanie",
+      "category": "hat",
+      "id": "gid://shopify/p/uEGMBBJDYU1IcfMJxo8xe",
+      "title": "Loiter Skull Knit Beanie Orange",
+      "merchant": "Culture Kings US",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/2114/6461/files/38416f06288bee0ddd871ac6271eeec7c56012ea_01037102_YO200_default_0010.jpg",
+      "merchantColor": "Orange"
+    }
+  ]
+}
