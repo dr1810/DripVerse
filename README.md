@@ -1,6 +1,6 @@
 # DripVerse
 
-Hackathon demo with two modes, built with Next.js (App Router), TypeScript and Gemini "Nano Banana" image generation.
+A launch-style landing page and a two-mode creative studio, built with Next.js (App Router), TypeScript and Gemini "Nano Banana" image generation.
 
 - **Fashion Mode**: pick a sample tee or upload a clothing photo, then choose or describe a scene. You get an editorial shot that keeps the garment's color, silhouette and details.
 - **Imagination Mode**: upload a drawing, write a short idea, or both. Idea starters are included, and the default output is a storybook illustration.
@@ -9,7 +9,7 @@ Hackathon demo with two modes, built with Next.js (App Router), TypeScript and G
 
 ```bash
 npm install
-cp .env.example .env.local   # then set GEMINI_API_KEY
+cp .env.example .env.local   # then put your real key in GEMINI_API_KEY (.env.local is git-ignored)
 npm run dev                  # http://localhost:3000
 ```
 
@@ -19,6 +19,10 @@ npm run dev                  # http://localhost:3000
 | `GEMINI_IMAGE_MODEL` | Defaults to `gemini-2.5-flash-image`. Use `gemini-3-pro-image-preview` for Nano Banana Pro. |
 | `GEMINI_TIMEOUT_MS` | Optional; defaults to 60000. |
 
+Next.js loads `.env.local` on the server only; the key never reaches the browser.
+
+In a Claude Code cloud session, add the key as a **Network secret** for `generativelanguage.googleapis.com`, sent in the `x-goog-api-key` header. Then `.env.local` can hold any placeholder value, and the proxy swaps in the real key.
+
 Without a key, the app still runs. Generate then shows a placeholder clearly labelled **SAMPLE RESULT (fallback)** instead of a real image.
 
 ## Two-mode demo
@@ -26,6 +30,17 @@ Without a key, the app still runs. Generate then shows a placeholder clearly lab
 1. **Fashion**: keep *Sunset pocket tee* selected, pick *Golden-hour rooftop*, and press **Generate**. Try *Midnight star tee* with *Neon street* to show that the graphic is preserved.
 2. Switch to **Imagination**: select *Rocket cat doodle*, tap the starter *A cat astronaut planting flowers on the moon*, keep *Storybook*, and press **Generate**.
 3. Show **Retry** or **Regenerate**, and point out the roadmap strip: Shopify recommendations and checkout come next.
+
+## Showcase images
+
+The landing page reads its before/after pairs from `src/lib/showcase.ts`. Until real outputs exist, it shows hand-drawn concept art labelled "Concept art". To swap in real Nano Banana results:
+
+```bash
+npm run dev
+node scripts/generate-showcase.mjs http://localhost:3000
+```
+
+Then point `output.src` at the new files in `public/showcase/` and set `generated: true`.
 
 ## How it works
 
