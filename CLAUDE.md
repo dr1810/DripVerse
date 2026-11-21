@@ -12,7 +12,7 @@ Next.js 15 App Router + TypeScript. No database; uploads and results are transie
 
 ## Rules
 - Keep secrets server-side. Validate image type/size (`src/lib/upload.ts`). Only fetch product images from `cdn.shopify.com`.
-- Imagination Mode: drawings and fictional text only; no photos; no shopping.
+- Imagination Mode: drawings and fictional text only; no photos. Tee ideas use preset catalog queries only and have no purchase links.
 - Show truthful errors; never substitute fake results.
 - Checks: `npx tsc --noEmit && npm run lint && npm run build`.
 - In a Claude Code cloud container, start servers with `NODE_USE_ENV_PROXY=1` so Node's fetch uses the egress proxy.
