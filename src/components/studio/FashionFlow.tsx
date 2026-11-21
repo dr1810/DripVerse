@@ -59,10 +59,32 @@ export default function FashionFlow() {
   const selfieRef = useRef<HTMLInputElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const productsRef = useRef<HTMLDivElement>(null);
+  const rowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => () => {
     for (const u of [upload, selfie]) if (u) URL.revokeObjectURL(u.url);
   }, [upload, selfie]);
+
+  // New search results start at the left; selecting a card keeps the scroll position.
+  useEffect(() => {
+    if (rowRef.current) rowRef.current.scrollLeft = 0;
+  }, [products]);
+
+  // Arrow keys / Home / End move focus between cards; Enter or Space selects (native button behavior).
+  function onRowKey(e: React.KeyboardEvent<HTMLDivElement>) {
+    const cards = Array.from(rowRef.current?.querySelectorAll<HTMLButtonElement>("button.product") ?? []);
+    if (!cards.length) return;
+    const i = cards.indexOf(document.activeElement as HTMLButtonElement);
+    let next = -1;
+    if (e.key === "ArrowRight") next = i < 0 ? 0 : Math.min(i + 1, cards.length - 1);
+    else if (e.key === "ArrowLeft") next = i < 0 ? 0 : Math.max(i - 1, 0);
+    else if (e.key === "Home") next = 0;
+    else if (e.key === "End") next = cards.length - 1;
+    if (next < 0) return;
+    e.preventDefault();
+    cards[next].focus({ preventScroll: true });
+    cards[next].scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "nearest", inline: "nearest" });
+  }
 
   const sceneLabel = customScene.trim() || FASHION_SCENES.find((s) => s.id === sceneId)?.label || "";
   const busy = Object.values(steps).includes("running");
@@ -351,7 +373,7 @@ export default function FashionFlow() {
             </form>
           )}
           {steps.search === "running" && (
-            <div className="productGrid">
+            <div className="productRow" aria-hidden>
               {Array.from({ length: 4 }).map((_, i) => (
                 <div key={i} className="product skeleton" />
               ))}
@@ -378,7 +400,13 @@ export default function FashionFlow() {
                   {w}
                 </p>
               ))}
-              <div className="productGrid">
+              <div
+                ref={rowRef}
+                className="productRow"
+                role="group"
+                aria-label={`${products.length} Shopify results. Use arrow keys to browse.`}
+                onKeyDown={onRowKey}
+              >
                 {products.map((p) => (
                   <ProductCard key={p.id} p={p} selected={selected?.id === p.id} onSelect={() => setSelected(p)} />
                 ))}
