@@ -351,7 +351,7 @@ export default function FashionFlow() {
             </form>
           )}
           {steps.search === "running" && (
-            <div className="productGrid">
+            <div className="productStrip" aria-hidden="true">
               {Array.from({ length: 4 }).map((_, i) => (
                 <div key={i} className="product skeleton" />
               ))}
@@ -378,7 +378,7 @@ export default function FashionFlow() {
                   {w}
                 </p>
               ))}
-              <div className="productGrid">
+              <div className="productStrip" role="region" aria-label="Product search results" tabIndex={0}>
                 {products.map((p) => (
                   <ProductCard key={p.id} p={p} selected={selected?.id === p.id} onSelect={() => setSelected(p)} />
                 ))}
