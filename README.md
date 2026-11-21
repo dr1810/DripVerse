@@ -1,9 +1,11 @@
 # DripVerse
 
-A launch-style landing page and a two-mode creative studio, built with Next.js (App Router), TypeScript and Gemini "Nano Banana" image generation.
+See what you imagine.
 
-- **Fashion Mode**: pick a sample tee or upload a clothing photo, then choose or describe a scene. You get an editorial shot that keeps the garment's color, silhouette and details.
-- **Imagination Mode**: upload a drawing, write a short idea, or both. Idea starters are included, and the default output is a storybook illustration.
+DripVerse puts a favorite tee somewhere unexpected, or turns a sketch into a world of its own. One page, two modes, one Generate button.
+
+- **Fashion Mode.** Same tee, new scene. Pick a tee and a place. The color, cut and details stay true.
+- **Imagination Mode.** A whole world from a doodle. Add a sketch, a few words or both, and get a storybook scene.
 
 ## Setup
 
@@ -29,7 +31,7 @@ Without a key, the app still runs. Generate then shows a placeholder clearly lab
 
 1. **Fashion**: keep *Sunset pocket tee* selected, pick *Golden-hour rooftop*, and press **Generate**. Try *Midnight star tee* with *Neon street* to show that the graphic is preserved.
 2. Switch to **Imagination**: select *Rocket cat doodle*, tap the starter *A cat astronaut planting flowers on the moon*, keep *Storybook*, and press **Generate**.
-3. Show **Retry** or **Regenerate**, and point out the roadmap strip: Shopify recommendations and checkout come next.
+3. Show **Regenerate**. Shopify recommendations and checkout come next.
 
 ## Showcase images
 

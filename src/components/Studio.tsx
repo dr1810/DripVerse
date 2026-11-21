@@ -148,8 +148,8 @@ export default function Studio() {
   return (
     <section id="studio" ref={sectionRef} className="studio" aria-labelledby="studio-h">
       <div className="studioHead">
-        <p className="eyebrow">The studio</p>
         <h2 id="studio-h">Start creating.</h2>
+        <p className="lede">Choose a mode, start from a sample or your own image, then press Generate.</p>
         <div className="segmented" role="tablist" aria-label="Mode" data-mode={mode}>
           <span className="segThumb" aria-hidden />
           <button role="tab" aria-selected={mode === "fashion"} onClick={() => switchMode("fashion")}>
@@ -195,7 +195,7 @@ export default function Studio() {
                   <span className="plus" aria-hidden>
                     +
                   </span>
-                  <span>Upload</span>
+                  <span>Upload your own</span>
                 </button>
               )}
               <input ref={fileRef} type="file" accept={ACCEPT.join(",")} hidden onChange={onFile} />
@@ -221,23 +221,29 @@ export default function Studio() {
                   </button>
                 ))}
               </div>
-              <input
-                className="text"
-                value={customScene}
-                maxLength={MAX_SCENE_CHARS}
-                placeholder="Or describe your own scene…"
-                aria-label="Describe your own scene"
-                onChange={(e) => setCustomScene(e.target.value)}
-              />
-              <textarea
-                className="text"
-                value={fashionNotes}
-                maxLength={MAX_PROMPT_CHARS}
-                rows={2}
-                placeholder="Styling notes (optional): wide-leg denim, relaxed pose…"
-                aria-label="Styling notes"
-                onChange={(e) => setFashionNotes(e.target.value)}
-              />
+              <label className="field">
+                <span>Or describe your own scene</span>
+                <input
+                  className="text"
+                  value={customScene}
+                  maxLength={MAX_SCENE_CHARS}
+                  placeholder="A misty forest trail at sunrise"
+                  onChange={(e) => setCustomScene(e.target.value)}
+                />
+              </label>
+              <label className="field">
+                <span>
+                  Styling notes <em>optional</em>
+                </span>
+                <textarea
+                  className="text"
+                  value={fashionNotes}
+                  maxLength={MAX_PROMPT_CHARS}
+                  rows={2}
+                  placeholder="Wide-leg denim, relaxed pose"
+                  onChange={(e) => setFashionNotes(e.target.value)}
+                />
+              </label>
             </div>
           ) : (
             <>
@@ -252,15 +258,17 @@ export default function Studio() {
                     </button>
                   ))}
                 </div>
-                <textarea
-                  className="text"
-                  value={idea}
-                  maxLength={MAX_PROMPT_CHARS}
-                  rows={2}
-                  placeholder="A short, fictional idea…"
-                  aria-label="Describe your idea"
-                  onChange={(e) => setIdea(e.target.value)}
-                />
+                <label className="field">
+                  <span>Your idea</span>
+                  <textarea
+                    className="text"
+                    value={idea}
+                    maxLength={MAX_PROMPT_CHARS}
+                    rows={2}
+                    placeholder="A short, fictional idea"
+                    onChange={(e) => setIdea(e.target.value)}
+                  />
+                </label>
                 <small className="count">
                   {idea.length}/{MAX_PROMPT_CHARS}
                 </small>
