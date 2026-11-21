@@ -6,12 +6,12 @@ const base = process.argv[2] ?? "http://localhost:3000";
 const jobs = [
   {
     out: "public/showcase/fashion.png",
-    fields: { mode: "fashion", sceneId: "rooftop" },
+    fields: { mode: "fashion", sceneId: "nyc" },
     image: "public/samples/tee-sunset.png",
   },
   {
     out: "public/showcase/imagination.png",
-    fields: { mode: "imagination", styleId: "storybook", prompt: "A cat astronaut planting flowers on the moon" },
+    fields: { mode: "imagination", styleId: "storybook", description: "A cat astronaut with a rocket-shaped suit", sceneId: "space" },
     image: "public/samples/drawing-rocket-cat.png",
   },
 ];
@@ -19,7 +19,7 @@ const jobs = [
 for (const job of jobs) {
   const form = new FormData();
   for (const [k, v] of Object.entries(job.fields)) form.set(k, v);
-  form.set("image", new Blob([await readFile(job.image)], { type: "image/png" }), "input.png");
+  form.set(job.fields.mode === "fashion" ? "garment" : "drawing", new Blob([await readFile(job.image)], { type: "image/png" }), "input.png");
   const t0 = Date.now();
   const res = await fetch(`${base}/api/generate`, { method: "POST", body: form });
   const data = await res.json();

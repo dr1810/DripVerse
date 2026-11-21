@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Reveal from "@/components/Reveal";
+import ModelsExplainer from "@/components/ModelsExplainer";
 import Studio from "@/components/Studio";
 import { SHOWCASE, type ShowcasePair } from "@/lib/showcase";
 
@@ -30,6 +31,7 @@ export default function Home() {
           <nav className="navLinks" aria-label="Sections">
             <a href="#fashion">Fashion</a>
             <a href="#imagination">Imagination</a>
+            <a href="#how">How it works</a>
             <a href="#studio">Create</a>
           </nav>
         </div>
@@ -38,14 +40,14 @@ export default function Home() {
       <main id="top">
         <section className="hero" aria-labelledby="hero-h">
           <Reveal>
-            <h1 id="hero-h">See what you imagine.</h1>
-            <p className="lede">Put a favorite tee somewhere unexpected, or turn a sketch into a world of its own.</p>
+            <h1 id="hero-h">Imagine it. Wear it. Find it.</h1>
+            <p className="lede">See real clothes in imagined worlds, then buy the exact piece from a real store.</p>
             <a href="#studio" className="cta">
               Start creating
             </a>
           </Reveal>
           <Reveal className="heroVisual" delay={150}>
-            <img src="/showcase/hero.svg" alt="An orange pocket tee floating above a flowering storybook moon, with a cat flying past in a rocket" />
+            <img src="/showcase/hero.svg" alt="Illustration: an orange pocket tee floating above a flowering storybook moon" />
           </Reveal>
         </section>
 
@@ -53,7 +55,7 @@ export default function Home() {
           <Reveal>
             <p className="eyebrow">Fashion Mode</p>
             <h2 id="fashion-h">Same tee. New scene.</h2>
-            <p className="lede">Pick a tee and a place, and DripVerse keeps its color, cut and every detail.</p>
+            <p className="lede">Show us a tee. We find the real one on Shopify and drop you into any world wearing it.</p>
             <a href="#try-fashion" className="link">
               Try Fashion Mode ›
             </a>
@@ -67,13 +69,24 @@ export default function Home() {
           <Reveal>
             <p className="eyebrow">Imagination Mode</p>
             <h2 id="imagination-h">A whole world from a doodle.</h2>
-            <p className="lede">Add a sketch, a few words or both, and get a storybook scene that keeps your ideas.</p>
+            <p className="lede">Kids draw an outfit and meet the character who wears it. No photos needed.</p>
             <a href="#try-imagination" className="link">
               Try Imagination Mode ›
             </a>
           </Reveal>
           <Reveal delay={100}>
             <Transformation pair={imagination} />
+          </Reveal>
+        </section>
+
+        <section id="how" className="feature engineSection" aria-labelledby="how-h">
+          <Reveal>
+            <p className="eyebrow">Under the hood</p>
+            <h2 id="how-h">Two Gemini 4 models. One real store.</h2>
+            <p className="lede">Each model has one job, so every step is fast, checkable and honest.</p>
+          </Reveal>
+          <Reveal delay={100}>
+            <ModelsExplainer />
           </Reveal>
         </section>
 
